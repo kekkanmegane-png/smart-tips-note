@@ -1,0 +1,19 @@
+---
+const { id } = Astro.params;
+
+const res = await fetch(
+  `https://${import.meta.env.MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1/posts/${id}`,
+  {
+    headers: { 'X-MICROCMS-API-KEY': import.meta.env.MICROCMS_API_KEY }
+  }
+);
+
+const post = await res.json();
+---
+
+<html lang="ja">
+  <body>
+    <h1>{post.title}</h1>
+    <div innerHTML={post.body}></div>
+  </body>
+</html>
