@@ -1,19 +1,20 @@
 ---
-const { id } = Astro.params;
+import { fetchPosts } from '../../lib/microcms.js';
 
-const res = await fetch(
-  `https://${import.meta.env.MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1/posts/${id}`,
-  {
-    headers: { 'X-MICROCMS-API-KEY': import.meta.env.MICROCMS_API_KEY }
-  }
-);
+export async function getStaticPaths() {
+  const data = await fetchPosts();
+  return data.contents.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
 
-const post = await res.json();
+const { post } = Astro.props;
 ---
 
 <html lang="ja">
   <body>
     <h1>{post.title}</h1>
-    <div innerHTML={post.body}></div>
+    <p>{post.body}</p>
   </body>
 </html>
