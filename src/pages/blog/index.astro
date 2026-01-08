@@ -1,0 +1,18 @@
+---
+import { fetchPosts } from '../../lib/microcms.js';
+const data = await fetchPosts();
+const posts = data.contents;
+---
+
+<html lang="ja">
+  <body>
+    <h1>ブログ記事一覧</h1>
+    <ul>
+      {posts.map(post => (
+        <li>
+          <a href={`/blog/${post.id}`}>{post.title}</a>
+        </li>
+      ))}
+    </ul>
+  </body>
+</html>
