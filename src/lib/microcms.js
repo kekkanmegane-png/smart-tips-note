@@ -1,5 +1,5 @@
 export const fetchPosts = async () => {
-  const domain = import.meta.env.MICROCMS_SERVICE_DOMAIN;
+  const domain = 'kurashi-smartphone'; // ← ここを直接指定
   const apiKey = import.meta.env.MICROCMS_API_KEY;
 
   const res = await fetch(`https://${domain}.microcms.io/api/v1/posts`, {
@@ -8,3 +8,4 @@ export const fetchPosts = async () => {
 
   return res.json();
 };
+
