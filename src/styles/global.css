@@ -1,0 +1,54 @@
+/* 全体の基本設定 */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.8;
+  padding: 16px;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #222;
+}
+
+/* 見出し */
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+/* 段落 */
+p {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+/* リスト */
+ul, ol {
+  margin: 1rem 0 1rem 1.2rem;
+  padding-left: 1rem;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+/* 広告枠（仮） */
+.ad-slot {
+  margin: 24px 0;
+  padding: 12px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
