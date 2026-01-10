@@ -13,6 +13,9 @@ const { post } = Astro.props;
 ---
 
 <html lang="ja">
+  <head>
+    <link rel="stylesheet" href="/src/styles/global.css">
+  </head>
   <body>
     <h1>{post.title}</h1>
     <div set:html={post.body}></div>
@@ -20,4 +23,5 @@ const { post } = Astro.props;
     <div class="ad-slot"></div>
   </body>
 </html>
+
 
